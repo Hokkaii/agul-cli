@@ -3,32 +3,35 @@
   "version": "0.0.1",
   "license": "MIT",
   "description": "a create project cli tools",
-  "main": "./dist/index.js",
   "keywords": [
     "get template",
     "cli"
   ],
   "scripts": {
-    "dev": "ts-node -r tsconfig-paths/register --files ./dist/index.js",
-    "build": "rollup --config rollup.config.js --bundleConfigAsCjs",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "node ./bin/index.js",
+    "build": "rollup --config rollup.config.js --bundleConfigAsCjs"
   },
   "bin": {
-    "iauto-create-web": "./dist/index.js"
+    "agul": "bin/agul.js",
+    "agul-create": "bin/agul-create.js"
   },
   "dependencies": {
+    "axios": "^1.4.0",
+    "chalk": "^4.1.2",
+    "commander": "^11.0.0",
+    "download-git-repo": "^3.0.2",
+    "ejs": "^3.1.9",
+    "figlet": "^1.6.0",
+    "fs-extra": "^11.1.1",
     "inquirer": "^8.1.1",
+    "nginx-format": "^0.1.7",
+    "open": "^8.4.0",
     "ora": "^5.4.1",
+    "prettier-format": "^2.0.2",
     "shelljs": "^0.8.5",
-    "typescript": "^4.3.5"
+    "yeoman-generator": "^5.9.0"
   },
   "devDependencies": {
-    "@rollup/plugin-terser": "^0.4.3",
-    "@rollup/plugin-typescript": "^11.1.2",
-    "@types/inquirer": "^7.3.3",
-    "@types/node": "^16.3.1",
-    "rollup": "^3.26.3",
-    "ts-node": "^10.1.0",
-    "tsconfig-paths": "^3.10.1"
+    "rollup": "^3.26.3"
   }
 }
